@@ -1,0 +1,13 @@
+.tituloPrimario{
+    color: blue;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.divTituloPrimario{
+    width: 100%;
+    background-color: snow;
+    border: solid blue;
+    border-radius: 10px;
+    line-height: 100%;
+    text-align: center;
+
+}
