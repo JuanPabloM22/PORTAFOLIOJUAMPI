@@ -1,0 +1,12 @@
+.panel{
+    width: 100%;
+    line-height: 100%;
+    text-align: center;
+}
+.boton{
+    display: inline ;
+    margin-left: 2%;
+}
+.boton:hover{
+    cursor: pointer;
+}

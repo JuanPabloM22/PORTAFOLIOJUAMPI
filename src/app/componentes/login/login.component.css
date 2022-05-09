@@ -23,3 +23,6 @@
     background-color: gray;
     color: white;
 }
+.container-fluid {
+    max-width: 400px
+}

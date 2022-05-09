@@ -11,3 +11,18 @@
     text-align: center;
 
 }
+.tabla{
+    width: 100%;
+    text-align: center;
+}
+.infoPersonal{
+    background-color: white;
+    width: 100%;
+}
+.subtitulo{
+    background-color: gray;
+    color: white;
+}
+.container-fluid {
+    max-width: 400px
+}

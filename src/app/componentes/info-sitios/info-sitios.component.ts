@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoSitiosComponent implements OnInit {
   titulo: string = "INFORMACION SITIOS";
+  nombre: string = "portafolio";
+  url: string = "www.portafolioJuanPabloMonserrat.com";
   constructor() { }
 
   ngOnInit(): void {
