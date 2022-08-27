@@ -13,6 +13,7 @@ import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Getter @Setter
 @Entity
 public class Usuario {
@@ -22,13 +23,10 @@ public class Usuario {
     
     private String nombreUsuario;
     private String password;
-    
-    @NotNull
-    @Size(min =1, max = 50, message="No cumple condicion")
     private String nombre;
     private String apellido;
-    private String Email;
-    private String Telefono;
+    private String email;
+    private String telefono;
          
     
     

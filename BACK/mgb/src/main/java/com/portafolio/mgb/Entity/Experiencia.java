@@ -23,5 +23,6 @@ public class Experiencia {
         private Date fechaInicio;
         private Date fechaFin;
         private Long idUsuario;
+
     
 }

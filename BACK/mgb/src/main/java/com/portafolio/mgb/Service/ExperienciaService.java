@@ -1,6 +1,6 @@
+package com.portafolio.mgb.Service;
 
 import com.portafolio.mgb.Entity.Experiencia;
-import com.portafolio.mgb.Interface.IEducacionService;
 import com.portafolio.mgb.Interface.IExperienciaService;
 import com.portafolio.mgb.Repository.IExperienciaRepository;
 import java.util.List;

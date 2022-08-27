@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package com.portafolio.mgb.Repository;
-
 import com.portafolio.mgb.Entity.Educacion;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -11,6 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author Lenovo
  */
-public interface IEducacionRepository extends JpaRepository<Educacion,Long> {
+public interface IEducacionRepository extends JpaRepository<Educacion,Long>{
     
 }

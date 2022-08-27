@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -23,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UsuarioController {
     @Autowired IUsuarioService iusuarioService;
     
-    @GetMapping("/usuarios/all")
+    @GetMapping("usuarios/all")
     public List<Usuario> getUsuario(){
         return iusuarioService.getUsuario();
     }
@@ -35,13 +37,55 @@ public class UsuarioController {
     }
     
     @DeleteMapping("/usuarios/borrar/{id}")
-    public String deleteUsuario (@PathVariable Long idUsuario){
-        iusuarioService.deleteUsuario(idUsuario);
-        return "Borrado Ok";
+    public String deleteUsuario (@PathVariable Long id){
+        Usuario usuario = iusuarioService.findUsuario(id);
+        if(usuario == null){
+            return "Ese usuario no existe";
+        }
+        else{
+        iusuarioService.deleteUsuario(id);
+        return "Borrado Ok";    
+        }
+        
     }
-    @GetMapping("/usuarios/byId{id}")
-    public Usuario findUsuario (Long idUsuario){
-        return iusuarioService.findUsuario(idUsuario);
+    @GetMapping("/usuarios/byId/{id}")
+    public Usuario findUsuario (Long id){
+        return iusuarioService.findUsuario(id);
+    }
+    
+    /*
+     @RequestParam("nombreUsuario") String nombreUsuario, 
+                                @RequestParam("nombre") String nombre,
+                                @RequestParam("apellido") String apellido,
+                                @RequestParam("email") String email,
+                                @RequestParam("password") String password,
+                                @RequestParam("telefono") String telefono)
+    
+            user.setNombreUsuario(nombreUsuario);
+        user.setNombreUsuario(nombre);
+        user.setNombreUsuario(apellido);
+        user.setNombreUsuario(email);
+        user.setNombreUsuario(password);
+        user.setNombreUsuario(telefono);
+    */    
+    @PutMapping("/usuarios/editar/{id}")
+    public Usuario editUsuario(@PathVariable Long id, @RequestBody Usuario usuario){
+        Usuario user = iusuarioService.findUsuario(id);
+        if(user == null){
+            return null;
+        }
+        else{
+        user.setNombreUsuario(usuario.getNombreUsuario());
+        user.setNombre(usuario.getNombre());
+        user.setApellido(usuario.getApellido());
+        user.setEmail(usuario.getEmail());
+        user.setPassword(usuario.getPassword());
+        user.setTelefono(usuario.getTelefono());
+        
+        iusuarioService.saveUsuario(user);
+        
+        return user;
+        }
     }
     
     
